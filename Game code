@@ -1,0 +1,1769 @@
+Let's make a game!
+    name:sharas idle game
+    desc:just a little idle game with lots of things to do and updates to come <i>version 1.3</i>
+    created:1/20/22
+    updated:1/29/22
+    by:sharafzada and milo and my guy and Julian TB
+    version:1,3
+//game inspired by cookie clicker the game is not made to be like cookie clicker but if it is addicting well I guess thats how the game is 
+//transcript no.1: we got enemies coming from every cant stop them from coming into the game its a dimensional take over dress well or die *end of transcript*
+ 
+Settings
+    background:https://file.garden/Ykhq6WA2LRQTk8jB/Background
+    building cost increase:115%
+    building cost refund:50%
+    spritesheet:icons, 64 by 64, 
+    stylesheet:stuff/bigBlue.css
+ 
+Layout
+  use default
+  *log
+    in:main
+    contains:Log
+
+Buttons
+      *redButton
+             name:Make some cash
+             desc:Click this to make some cash
+             on click:anim icon wobble
+             on click:yield 1 dollars
+             icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/redButton.jpg
+             no text
+             class:bigButton hasFlares
+             icon class:shadowed 
+             tooltip origin:top
+             tooltip class:red 
+ 
+Resources
+         *money|dollars
+           name:Money|dollars
+           desc:<i>This is your cash buy upgrades and buildings</i>
+           class:noBackground
+           show earned
+           icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/One_Dollar.png
+ 
+        *goldenmoney|goldendollars
+           name:Golden money|golden dollars
+           desc:<i>"welp that's a lot of cash that you have in a golden one"</i>
+           class:noBackground
+           hidden when 0
+           icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Golden_Dollar.png
+ 
+Buildings
+       *TEMPLATE
+              on click:anim glow
+ 
+ 
+       *cursor|cursors
+              name:Cursor|cursors
+              desc:</q>A nice little cursor to click 0.1 dollars for you treat them well :)<q>
+              icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Basic_Cursor.jpg
+              cost:15 dollars
+              on tick:yield 0.1 dollars
+              req:5 dollars:earned
+ 
+       *zerotwo|zerotwos
+              name:Zerotwo|zerotwos 
+              desc:</q>Hope you dont become a simp :tpose:<q>
+              cost:100 dollars
+              on tick:yield 0.5 dollars
+              req:50 dollars:earned
+ 
+       *snowglobe|snowglobes
+              name:Snowglobe|snowglobes
+              desc:</q>Shake it up to get some cash<q>
+              icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Snowglobe.png
+              cost:350 dollars
+              on tick:yield 20 dollars
+              req:200 dollars:earned
+ 
+       *farm|farms
+              name:Farm|farms
+              desc:</q>Farm some food and sell it to make some cash<q>
+              icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Basic_Farm.png
+              cost:400 dollars
+              on tick:yield 30 dollars
+              req:300 dollars:earned
+ 
+       *factory|factories
+              name:Factory|factories
+              desc:</q>A nice factory to print some cash, hope you got permissions for this >_><q>
+              icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Basic_Factory.jpg
+              cost:5000 dollars
+              on tick:yield 100 dollars
+              req:1000 dollars:earned
+       
+       *bank|banks
+              name:Bank|banks
+              desc:</q>A bank secure some money loans don't be broke<q>
+              icon:
+              cost:100000 dollars
+              on tick:yield 200 dollars
+              req:10000 dollars:earned
+ 
+       *console|consoles
+              name:Console|consoles
+              desc:</q>Hack in some cash with some good old JavaScript<q>
+              icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Basic_Console.jpg
+              cost:150000 dollars
+              on tick:yield 8500 dollars
+              req:10000 dollars:earned
+ 
+       *sharafzada|sharafzadas
+              name:Sharafzada|sharafzadas
+              desc:</q>The owner him self here to hack for you in good old JavaScript<q>
+              icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Basic_Shara.png
+              cost:1000000 dollars
+              on tick:yield 11000 dollars
+              req:100000 dollars:earned
+
+       *rayyan|rayyans
+              name:Rayyan|rayyans
+              desc:</q>a friend to bake golden cookies<q>
+              icon:
+              cost:1100000 dollars
+              on tick:yield 12000 dollars
+              req:200000 dollars:earned
+ 
+       *goldenhouse|goldenhouses
+              name:Golden house|golden houses
+              desc:</q>A pure gold house here to get the long forgotten golden dollars<q>
+              cost:100000 dollars
+              on tick:yield 0.1 goldendollars
+ 
+Upgrades
+       *TEMPLATE
+              on click:anim glow
+ 
+      *coffeh
+        name:coffeh
+        desc:"Just some coffeh to double-click right?" increases dollars yield on money button by +1%
+        cost:100 dollars
+        passive:multiply dollars yield of redButton by 2
+        req:100 dollars:earned
+        on earn:hide this
+ 
+     *10poundsofsugar
+        name:10 pounds of sugar
+        desc:"Just enough to get you clicking twice as fast" increases dollars yield on money button by +2%
+        cost:500 dollars
+        passive:multiply dollars yield of redButton by 2
+        req:100 dollars:earned
+        on earn:hide this
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Ten_Pounds_of_Sugar_Upgrade.png
+ 
+     *strongerfinger
+        name:Stronger finger
+        desc:"Just a metal finger to click faster and make you cash" increases dollars yield on money button by +4%
+        passive:increase dollars yield of redButton by 3
+        cost:1000 dollars
+        req:1000 dollars:earned
+        on earn:hide this
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Stronger_Fingers_Upgrade.png
+ 
+      *doublefinger
+        name:Double finger
+        desc:"Using 2 fingers will help right?" increases dollars yield on money button by +6%
+        passive:multiply dollars yield of redButton by 4
+        cost:1500 dollars
+        req:2000 dollars:earned
+        on earn:hide this
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Double_Finger_Upgrade.png
+ 
+     *cheeseyfinger
+        name:Cheesey finger
+        desc:"cheesy fingers how did this happen?" increases dollars yield on money button by +5%
+        passive:multiply dollars yield of redButton by 5
+        cost:2500 dollars
+        req:3000 dollars:earned
+        on earn:hide this
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Cheese_Finger_.png
+  
+     *clickyich
+        name:Clickyich
+        desc:"itchy" increases dollars yield on money button by +6%
+        passive:increase dollars yield of redButton by 6
+        cost:3000
+        req:3500 dollars:earned
+        on earn:hide this
+        icon:
+ 
+//everything under is a cursor upgrade everything on top is a button click upgrade
+      *strongercursor
+        name:Stronger finger
+        desc:"getting your cursor stronger? well hope it will work" increases yield of cursor by +1%
+        passive:multiply yield of cursor by 1
+        cost:500 dollars
+        req:0 dollars:earned
+        on earn:hide this
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/stronger%20finger
+ 
+      *doubleclick
+        name:Double click
+        desc:"double click TRIPLE CLICK QUAD CLICK!!" increases yield of cursor by +2%
+        passive:multiply yield of cursor by 2
+        cost:1000 dollars
+        req:100 dollars:earned
+        on earn:hide this
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Double%20click
+ 
+      *bigfamily
+        name:Big family
+        desc:"a big family that you have, hope you will visit them!" increases yield of non cursor by +1%
+        passive:multiply yield of zerotwo by 1
+        passive:multiply yield of farm by 1
+        passive:multiply yield of factory by 1
+        passive:multiply yield of console by 1
+        passive:multiply yield of sharafzada by 1
+        cost:6500 dollars
+        req:100 dollars:earned
+        on earn:hide this
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Big%20family
+ 
+      *metalcursor
+        name:Metal cursor
+        desc:"a big and heavy cursor ready for what you need" increases yield of cursor by +1%
+        passive:multiply yield of cursor by 2
+        cost:1500 dollars
+        req:1000 dollars:earned
+        on earn:hide this
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Metal%20cursor
+ 
+      *ironfinger
+        name:Icon finger
+        desc:"big heavy and just enough to click fast without pain" increases yield of cursor by +1%
+        passive:multiply yield of cursor by 3
+        cost:2500 dollars
+        req:2000 dollars:earned
+        on earn:hide this
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Iron%20finger
+ 
+      *titaniumfinger
+        name:Titanium finger
+        desc:"a heavy metal clicks a lot" increases yield of cursor by +1%
+        passive:multiply yield of cursor by 1
+        cost:3500 dollars
+        req:3000 dollars:earned
+        on earn:hide this
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Titanium%20finger
+ 
+      *goldenfinger
+        name:Golden finger
+        desc:"wait is this gold or no?" increases yield of cursor by +2% and increases yield of golden house by +1%
+        passive:multiply yield of cursor by 1
+        passive:multiply yield of goldenhouse by 1
+        cost:4000 dollars
+        cost:1 golden dollars
+        req:5000 dollars:earned
+        on earn:hide this
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Golden%20finger.png
+ 
+      *overpower
+        name:Over power
+        desc:"the cursor is getting really powerful maybe stuff upgrading?" increases cusror yield by +2%
+        passive:multiply yield of cursor by 2
+        cost:4500 dollars
+        req:4000 dollars:earned
+        on earn:hide this
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/OP
+ 
+      *dogs
+        name:Dogs
+        desc:"these are some dogs... WAIT is that milo?" increases cursor yield by +4%
+        passive:multiply yield of cursor by 4
+        cost:5000 dollars
+        req:4500 dollars:earned
+        on earn:hide this
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Milo_Cameo.png
+ 
+      *juststop
+        name:Just stop
+        desc:"its getting to unstable just stop" increases cursor yield by +5%
+        passive:multiply yield of cursor by 5
+        cost:5500 dollars
+        req:5000 dollars:earned
+        on earn:hide this
+//on top is cursor upgrades under is zerotwo upgrades... why just why 
+      *moresimps
+        name:More simps
+        desc:"more simps more money to share right?" increases zerotwo yield by +1%
+        passive:multiply yield of zerotwo by 1
+        cost:6000 dollars
+        req:5500 dollars:earned
+        on earn:hide this
+ 
+      *abreak
+        name:A break
+        desc:"everyone needs a break even zerotwo even me..." increases zerotwo yield by +2%
+        passive:multiply yield of zerotwo by 2
+        cost:6500 dollars
+        req:6000 dollars:earned
+        on earn:hide this
+ 
+       *tomuchsimps
+        name:To much simps
+        desc:"just what i needed, less space to work with and more pain.." increases zerotwo yield by +2%
+        passive:multiply yield of zerotwo by 2
+        cost:7000 dollars
+        req:6500 dollars:earned
+        on earn:hide this
+ 
+      *missing
+        name:Missing
+        desc:"people are missing anything you got with that zerotwo?" increases zerotwo yield by +3% 
+        passive:multiply yield of zerotwo by 3
+        cost:7500 dollars
+        req:7000 dollars:earned
+        on earn:hide this
+ 
+      *morezerotwo
+        name:More zerotwo
+        desc:"well we have the technolgey some how its 50 years early but we cracked them in from the multiverse" increases yield of zerotwo by +4%
+        passive:multiply yield of zerotwo by 4
+        cost:8000 dollars
+        req:7500 dollars:earned
+        on earn:hide this
+ 
+      *moremoney
+        name:More money
+        desc:"oh thought it would be for... im not jealous" increases yield of zerotwo by +5%
+        passive:multiply yield of zerotwo by 5
+        cost:8500 dollars
+        req:8000 dollars:earned
+        on earn:hide this
+ 
+      *lotsofsimps
+        name:lots of simps
+        desc:"taking up lots o space almost got no space" increases yield of zerotwo by +1%
+        passive:multiply yield of zerotwo by 1
+        cost:9000 dollars
+        req:8500 dollars:earned
+        on earn:hide this
+ 
+      *morespace
+        name:More space
+        desc:"finally more space at least im out of that basement" increases yield of zerotwo by +2%
+        passive:multiply yield of zerotwo by 2
+        cost:9500 dollars
+        req:9000 dollars:earned
+        on earn:hide this
+ 
+      *lotsofzerotwo
+        name:Lots of zerotwos
+        desc:"lots of them lots of space at least there wont be a lot of them right?" increases yield of zerotwo by +5%
+        passive:multiply yield of zerotwo by 5
+        cost:10000 dollars
+        req:9500 dollars:earned
+        on earn:hide this
+ 
+      *morebreaks
+        name:More breaks
+        desc:"just what i needed" increases yield of zerotwo by +6%
+        passive:multiply yield of zerotwo by 6
+        cost:15000 dollars
+        req:10000 dollars:earned
+        on earn:hide this
+//everything on top is a zerotwo upgrade everything under is a snowglobe upgrade
+      *deepfreeze
+        name:Deep freeze
+        desc:"getting cold right guys?" increases yield of snowglobe by +1%
+        passive:multiply yield of snowglobe by 1
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/North_n_South_Upgrade.png
+        cost:20000 dollars
+        req:15000 dollars:earned
+        on earn:hide this
+ 
+      *northnsouth
+        name:North n south
+        desc:"we will be going to both sides of canada right :[" increases yield of snowglobe by +2%
+        passive:multiply yield of snowglobe by 2
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Deep_Freeze_Upgrade.png
+        cost:25000 dollars
+        req:20000 dollars:earned
+        on earn:hide this
+ 
+     *biggerglobes
+        name:Bigger globes
+        desc:"this is pretty big lots of shaking potential" increases yield of snowglobe by +2%
+        passive:multiply yield of snowglobe by 2
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Bigger_Snowglobes_Upgrade.png
+        cost:30000 dollars
+        req:25000 dollars:earned
+        on earn:hide this
+ 
+     *heatedblanket
+        name:Heated blanket
+        desc:"im so warm" increases yield of snowglobe by +3%
+        passive:multiply yield of snowglobe by 3
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Heater_Upgrade.png
+        cost:35000 dollars
+        req:30000 dollars:earned
+        on earn:hide this
+ 
+      *hotcoco
+        name:Hot coco
+        desc:"mmm so hot and good" increases yield of snowglobe by +4%
+        passive:multiply yield of snowglobe by 4
+        cost:40000 dollars
+        req:35000 dollars:earned
+        on earn:hide this
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Coffee_Upgrade.png
+ 
+      *fire
+        name:Fire
+        desc:"this is safe right?" increases yield of snowglobe by +5%
+        passive:multiply yield of snowglobe by 5
+        cost:45000 dollars
+        req:40000 dollars:earned
+        on earn:hide this
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Fire_Upgrade.png
+ 
+      *heater
+        name:Heater
+        desc:"more hot then cold" increases yield of snowglobe by +6%
+        passive:multiply yield of snowglobe by 6
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Heater_Upgrade.png
+        cost:50000 dollars
+        req:45000 dollars:earned
+        on earn:hide this
+ 
+      *coldnhot
+        name:Cold n hot
+        desc:"well at least we can pick what we want now" incrases yield of snowglobe by +2%
+        passive:multiply yield of snowglobe by 2
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Hot_n_Cold_Upgrade.png
+        cost:55000 dollars
+        req:50000 dollars:earned
+        on earn:hide this
+ 
+      *snowcity
+        name:Snow city
+        desc:"how?" increases yield of snowglobe by +2%
+        passive:multiply yield of snowglobe by 2
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Snow_City.png
+        cost:60000 dollars
+        req:55000 dollars:earned
+        on earn:hide this
+ 
+      *reallybigsnowglobe
+        name:Really big snowglobe
+        desc:"well ill be it this is really big" increases yield of snowglboe by +1%
+        passive:multiply yield of snowglobe by 1
+        cost:65000 dollars
+        req:60000 dollars:earned
+        on earn:hide this
+ 
+//upgrades above are snowglobe upgrade everything under is a farm upgrade
+      *biggerland
+        name:Bigger land
+        desc:"more land more planting more money" increases yield of farm by +1%
+        passive:multiply yield of farm by 1
+        cost:4000 dollars
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Better_Farm.png
+        req:3500 dollars:earned
+        on earn:hide this
+ 
+      *fertilizer
+        name:Fertilizer
+        desc:"this will make plants grow fast but sadly it has side effects..." increases yield of farm by +2%
+        passive:multiply yield of farm by 2
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Gold_Farm.png
+        cost:4500 dollars
+        req:4000 dollars:earned
+        on earn:hide this
+ 
+      *healthyfood
+        name:Healthy food
+        desc:"just what the doctor ordered good to know in 2022 people will eat green" increases yield of farm by +2%
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Iron_Farm.png
+        passive:multiply yield of farm by 2
+        cost:5000 dollars
+        req:4500 dollars:earned
+        on earn:hide this
+ 
+      *betterseeds
+        name:Better seeds
+        desc:"bigger better and might be more healthy" increases yield of farm by +3%
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Diamond_Farm.png
+        passive:multiply yield of farm by 3
+        cost:5500 dollars
+        req:5000 dollars:earned
+        on earn:hide this
+ 
+      *grassland
+        name:Grass land
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Mini_Diamond_Farm.png
+        desc:"thats so much land i love it" increases yield of farm by +4%
+        passive:multiply yield of farm by 4
+        cost:6000 dollars
+        req:5500 dollars:earned
+        on earn:hide this
+ 
+     *hungry
+        name:Hungry
+        desc:"people hungry thats where we fix the gaps" increases yield of farm by +2%
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Ametyst_Farm.png
+        passive:multiply yield of farm by 2
+        cost:6500 dollars
+        req:6000 dollars:earned
+        on earn:hide this
+ 
+    *boredfarmer
+        name:Bored farmers
+        desc:"your bored well bored its not gold" increases yield of farm by +5%
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Saphire_Flower.png
+        passive:multiply yield of farm by 5
+        cost:7000 dollars
+        req:6500 dollars:earned
+        on earn:hide this
+ 
+   *betterlocation
+        name:Better location
+        desc:"haha thought i wouldnt break the 4th wall and bring this here right haha" increases yield of farm by +3%
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Gold_Farm_Portal.png
+        passive:multiply yield of farm by 3
+        cost:7500 dollars
+        req:7000 dollars:earned
+        on earn:hide this
+ 
+   *animals
+        name:Animals
+        desc:"milk from cows uh goat milk?" increases yield of farm by +2%
+        passive:multiply yield of farm by 2
+        cost:8000 dollars
+        req:7500 dollars:earned
+        on earn:hide this
+ 
+  *happypeople
+        name:Happy people
+        desc:"i am so happy" increases yield of farm by +3%
+        passive:multiply yield of farm by 1
+        cost:8500 dollars
+        req:8000 dollars:earned
+        on earn:hide this
+//everything on top is a farm upgrade everything under is a factory upgrade
+  *bigfactories
+        name:Big factories
+        desc:"this is big but we have permissions right? *nervous laugh*" increases yield of factory by +1%
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Better_Factory.png
+        passive:multiply yield of factory by 1
+        cost:8500 dollars
+        req:8000 dollars:earned
+        on earn:hide this
+ 
+  *childlabor
+        name:Child labor
+        desc:"a small healthy work force no pay needed = more money" increases yield of factory by +2%
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Iron_Factory.png
+        passive:multiply yield of factory by 2
+        cost:9000 dollars
+        req:8500 dollars:earned
+        on earn:hide this
+ 
+  *coffeee
+        name:Coffeee
+        desc:"just for the days you just want no sleep and work" increases yield of factory by +2%
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Diamond_Factory.png
+        passive:multiply yield of factory by 2
+        cost:10000 dollars
+        req:9000 dollars:earned
+        on earn:hide this
+ 
+  *bigsteamstacks
+        name:Big steam stacks
+        desc:"getting more production with a side effect global warming" increases yield of factory by +1%
+        icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Golden_Factory.png
+        passive:multiply yield of factory by 3
+        cost:10500 dollars
+        req:10000 dollars:earned
+        on earn:hide this
+ 
+  *bettersupplys
+       name:Better supplys
+       desc:"more supplys better that will lead to more money" increases yield of factory by +3%
+       icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Better_Diamond_Factory.png
+       passive:multiply yield of factory by 3
+       cost:11000 dollars
+       req:10500 dollars:earned
+       on earn:hide this
+ 
+  *biggershifts
+       name:Bigger shifts
+       desc:"awh man I have to take care of everything for 48 hours now even zerotwo :|" increases yield of factory by +4%
+       icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Ruby_Factory.png
+       passive:multiply yield of factory by 4
+       cost:11500 dollars
+       req:11000 dollars:earned
+       on earn:hide this
+ 
+  *ecofriendly
+       name:Eco friendly
+       desc:"looks like we will become the new green mean eating machine" increases yield of factory by +5%
+       icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Better_Gold_Factory.png
+       passive:multiply yield of factory by 5
+       cost:12000 dollars
+       req:11500 dollars:earned
+       on earn:hide this
+ 
+  *coffeysupply
+      name:Coffey supply
+      desc:"this is coffey or coffeee?" increases yield of factory by +6%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Ametyst_Factory.png
+      passive:multiply yield of factory by 6
+      cost:12500 dollars
+      req:12000 dollars:earned
+      on earn:hide this
+ 
+  *healthcarebenefits
+      name:Healthcare benefits
+      desc:"finally i have 1 broken leg and a arm" increases yield of factory by +2%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Saphire_Factory.png
+      passive:multiply yield of factory by 2
+      cost:13000 dollars
+      req:12500 dollars:earned
+      on earn:hide this
+ 
+  *diamondfactories
+      name:Diamond factories
+      desc:"this is 4 pure diamonds just dont tell" increases yield of factory by +2%
+      passive:multiply yield of factory by 2
+      cost:14000 dollars
+      req:13500 dollars:earned
+      on earn:hide this
+//everything above is a factory upgrade everything under is a bank upgrade
+  *costefficien
+      name:Cost cost
+      desc:"it works yep" increases yield of bank by +2%
+      passive:multiply yield of bank by 2
+      cost:15000 dollars
+      req:14000 dollars:earned
+      on earn:hide this
+
+  *loans
+      name:Loans
+      desc:"more debt heh" increases yield of bank by +1%
+      passive:multiply yield of bank by 1
+      cost:16000 dollars
+      req:15000 dollars:earned
+      on earn:hide this
+
+   *biggervault
+      name:Better vault
+      desc:"cash in get it" increases yield of bank by +2%
+      passive:multiply yield of bank by 2
+      cost:17000 dollars
+      req:16000 dollars:earned
+      on earn:hide this
+
+   *cash
+      name:Scissor proof cash
+      desc:"why we doing this" increases yield of bank by +1%
+      passive:multiply yield of bank by 1
+      cost:18000 dollars
+      req:17000 dollars:earned
+      on earn:hide this
+
+   *morework
+      name:More workers
+      desc:"yep more of them more of money" increases yield of bank by +3%
+      passive:multiply yield of bank by 3
+      cost:17000 dollars
+      req:16000 dollars:earned
+      on earn:hide this
+    
+   *bankingbank
+      name:Banking the  bank
+      desc:"making more cash hahah" increases yield of bank by +2%
+      passive:multiply yield of bank by 2
+      cost:18000 dollars
+      req:17000 dollars:earned
+      on earn:hide this
+
+   *nessies
+      name:Nessies
+      desc:"boop *hugs nessie*" increases yield of bank by +1%
+      passive:multiply yield of bank by 1
+      cost:19000 dollars
+      req:18000 dollars:earned
+      on earn:hide this
+
+   *brokers
+      name:Brokers
+      desc:"so we got more stocks ye" increases yield of bank by +3%
+      passive:multiply yield of bank by 3
+      cost:20000 dollars
+      req:19000 dollars:earned
+      on earn:hide this
+
+   *betterfinance
+      name:Bettter finance
+      desc:"cant beat em join em" increases yield of bank by +2%
+      passive:multiply yield of bank by 2
+      cost:21000 dollars
+      req:20000 dollars:earned
+      on earn:hide this
+
+    *moreintrest
+      name:More intrest
+      desc:"intrested in buying a bank" increases yield of bank by +3%
+      passive:multiply yield of bank by 3
+      cost:22000 dollars
+      req:21000 dollars:earned
+      on earn:hide this
+//everything above is a bank upgrade everything under is a console upgrade
+ 
+  *javascript
+      name:Java script
+      desc:"ah yes good old java to sip on wait this isn't the coffee?" increases yield of console by +1%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Better_Console.png
+      passive:multiply yield of console by 1
+      cost:70000 dollars
+      req:65000 dollars:earned
+      on earn:hide this
+ 
+  *bigscreen
+      name:Big screen
+      desc:"some might say you get a headache some wont but hope you don't" increases yield of console by +2%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Sussy_Console.png
+      passive:multiply yield of console by 2
+      cost:75000 dollars
+      req:70000 dollars:earned
+      on earn:hide this
+ 
+  *comfychair
+      name:Comfy chair
+      desc:"I feel so good thank you playrer :)" increases yield of console by +2%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Iron_Console.png
+      passive:multiply yield of console by 2
+      cost:80000 dollars
+      req:75000 dollars:earned
+      on earn:hide this
+ 
+  *speedtyper
+      name:Speed typers
+      desc:"this packs o punch" increases yield of console by +3%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Ruby_Console.png
+      passive:multiply yield of console by 3
+      cost:85000 dollars
+      req:80000 dollars:earned
+      on earn:hide this
+ 
+  *moreworkers
+      name:More workers
+      desc:"more workers for the task force hope they are comfy" increases yield of console by +4%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Amethyst_Console.png
+      passive:multiply yield of console by 4
+      cost:90000 dollars
+      req:85000 dollars:earned
+      on earn:hide this
+ 
+  *strongercode
+      name:Stronger code
+      desc:"something stronger will do good and maybe turn a profit right haha.." increases yield of console by +5%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Cookie_Console.png
+      passive:multiply yield of console by 5
+      cost:95000 dollars
+      req:90000 dollars:earned
+      on earn:hide this
+ 
+  *biggerconsoles
+      name:Bigger consoles
+      desc:"after paying over google we got bigger consoles" increases yield of console by +6%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Saphire_Console.png
+      passive:multiply yield of console by 6
+      cost:100000 dollars
+      req:95000 dollars:earned
+      on earn:hide this
+ 
+  *easiercode
+      name:Easier code
+      desc:"easy code thats hard thats something new" increases yield of console by +2%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Gaming_Console.png
+      passive:multiply yield of console by 2
+      cost:150000 dollars
+      req:100000 dollars:earned
+      on earn:hide this
+ 
+  *sponsors
+      name:Sponsors 
+      desc:"this game was sponsored by my stress" increases yield of console by +1%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/The_vortex_console.png
+      passive:multiply yield of console by 1
+      cost:200000 dollars
+      req:150000 dollars:earned
+      on earn:hide this
+ 
+  *bettersallary
+      name:Better sallary
+      desc:"25% seems to work right haha" increases yield of console by +2%
+      passive:multiply yield of console by 2
+      cost:250000 dollars
+      req:200000 dollars
+      on earn:hide this
+//everything on top is a console upgrade everything under is a sharafzada upgrade
+  *moresharafzada
+      name:More sharafzada
+      desc:"more of me but that isnt really me right... ha.. ha.." increases yield of sharafzada by +1%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Iron_Shara.png
+      passive:multiply yield of sharafzada by 1
+      cost:300000 dollars
+      req:250000 dollars:earned
+      on earn:hide this
+ 
+  *reallycomfychair
+      name:Really comfy chair
+      desc:"this is nice" increases yield of sharafzada by +2%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Golden_Shara.png
+      passive:multiply yield of sharafzada by 2
+      cost:350000 dollars
+      req:300000 dollars:earned
+      on earn:hide this
+ 
+  *speedtyping
+      name:Speed typing
+      desc:"faster faster faster FASTER" increases yield of sharafzada by +2%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Diamond_Shara.png
+      passive:multiply yield of sharafzada by 2
+      cost:400000 dollars
+      req:350000 dollars:earned
+      on earn:hide this
+ 
+  *moreenergy
+      name:More energy
+      desc:"well I guess this can help with the coding right haha" increases yield of sharafzada by +3%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Amethyst_Shara.png
+      passive:multiply yield of sharafzada by 3
+      cost:450000 dollars
+      req:400000 dollars:earned
+      on earn:hide this
+ 
+  *cookies
+      name:Cookies
+      desc:"good ol cookie got to voe em" increases yield of sharafzada by +2%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Saphire_Shara.png
+      passive:multiply yield of sharafzada by 2
+      cost:500000 dollars
+      req:450000 dollars:earned 
+      on earn:hide this
+ 
+  *tonsofcoffe
+      name:Tons of coffe
+      desc:"lots of it might help us" increases yield of sharafzada by +3%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Better_SharaImpossible.png
+      passive:multiply yield of sharafzada by 3
+      cost:550000 dollars
+      req:500000 dollars:earned
+      on earn:hide this
+ 
+  *bigoffice
+      name:Big office
+      desc:"something big and roomy" increases yield of sharafzada by +5%
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Ultra_Shara.png
+      passive:multiply yield of sharafzada by 5
+      cost:600000 dollars
+      req:550000 dollars:earned
+      on earn:hide this
+ 
+  *tomcuhshara
+      name:To much shara
+      desc:"lots of him right" increases yield of shrafzada by +1%
+      passive:multiply yield of sharafzada by 1
+      cost:650000 dollars
+      req:600000 dollars:earned
+      on earn:hide this
+ 
+  *moremlgglasses
+      name:More mlg glasses
+      desc:"got to love em right" increases yield of sharafzada by +4%
+      icon:
+      passive:multiply yield of sharafzada by 4
+      cost:700000 dollars
+      req:650000 dollars:earned
+      on earn:hide this
+ 
+   *onemillionshara
+      name:One million shara
+      desc:"lots of him to much even" increases yield of sharafzada by +6%
+      passive:multiply yield of sharafzada by 6
+      cost:10 goldendollars
+      req:700000 dollars:earned
+      on earn:hide this
+//everything under is a rayyan upgrade
+    *cookiesncrem
+      name:Cookies n crem
+      desc:"fine dining" increases yield of rayyan by +2%
+      passive:multiply yield of rayyan by 2
+      cost:100 goldendollars
+      req:600000 dollars:earned
+      on earn:hide this
+
+    *batterup
+      name:Batter up
+      desc:"battterrr up!" increases yield of rayyan by +1%
+      passive:multiply yield of rayyan by 1
+      cost:200 goldendollars
+      req:700000 dollars:earned
+      on earn:hide this
+
+    *bakingache
+      name:Baking ache
+      desc:"each" increases yield of rayyan by +3%
+      passive:multiply yield of rayyan by 3
+      cost:300 goldendollars
+      req:800000 dollars:earned
+      on earn:hide this
+
+     *bore
+      name:Bored
+      desc:"so bored" increases yield of rayyan by +2%
+      passive:multiply yield of rayyan by 2
+      cost:400 goldendollars
+      req:900000 dollars:earned
+      on earn:hide this
+
+     *makeitto
+      name:Make it to break it
+      desc:"BREAK IT" increases yield of rayyan by +4%
+      passive:multiply yield of rayyan by 4
+      cost:500 goldendollars
+      req:10000000 dollars:earned
+      on earn:hide this
+//everything under is a upgrade tree that gets unlocked
+  *path1
+     name:Path 1
+     desc:"what to choose 1 or 2?"
+     cost:100 goldendollars
+     req:10 goldendollars:earned
+     on earn:hide this
+
+   *unknownmatterc
+     name:Unknownmatter click
+     desc:"what it this?" increases yield of click by +11%
+     cost:200 goldendollars
+     req:path1
+     passive:multiply yield of redButton by 11
+     on earn:hide this
+
+   *unknownmattercursor
+     name:Unknownmatter cursor
+     desc:"well ill be it" increases yield of cursor by +11%
+     cost:300 goldendollars
+     req:unknownmatterc
+     passive:multiply yield of cursor by 11
+     on earn:hide this
+
+   *unkownmatterzertwo
+     name:Unkownmatter zerotwo
+     desc:"why?" increases yield of zerotwo by +11%
+     cost:400 goldendollars
+     req:unknownmattercursor
+     passive:multiply yield of zerotwo by 11
+     on earn:hide this
+
+   *unkownmattersnowglob
+     name:Unkownmatter snowglobe
+     desc:"cost or no?" increases yield of snowglobe by +11%
+     cost:500 goldendollars
+     req:unkownmatterzertwo
+     passive:multiply yield of snowglobe by 11
+     on earn:hide this
+
+   *unkownmatterfarm
+     name:Unkownmatter farm
+     desc:"now we got super foods" increases yield of farm by +11%
+     cost:600 goldendollars
+     req:unkownmattersnowglob
+     passive:multiply yield of farm by 11
+     on earn:hide this
+
+   *unkownmatterfactory
+     name:Unkownmatter factory
+     desc:"lets go do a lot of stuff" increases yield of factory by +11%
+     cost:700 goldendollars
+     req:unkownmatterfarm
+     passive:multiply yield of factory by 11
+     on earn:hide this
+
+  *unknownmatterbank
+     name:Unknownmatter bank
+     desc:"biggest loan yet" increases yield of bank by +11%
+     cost:800 goldendollars
+     req:unkownmatterfactory
+     icon:
+     passive:multiply yield of factory by 11
+     on earn:hide this
+
+
+   *unknownmatterconsol
+     name:Unkownmatter console
+     desc:"dont get tired just do it" increases yield of console by +11%
+     cost:900 goldendollars
+     req:unknownmatterbank
+     passive:multiply yield of console by 11
+     on earn:hide this
+
+   *unkownmattersharaf
+     name:Unkownmatter sharafzada
+     desc:"well this is unknown" increases yield of sharafzada by +11%
+     cost:1000 goldendollars
+     req:unknownmatterconsol
+     passive:multiply yield of sharafzada by 11
+     on earn:hide this
+//everything under is a path 2 upgrade on top is a path 1
+  *path2
+     name:Path 2
+     desc:"lots of choices what to choose 2 or 1?"
+     cost:100 goldendollars
+     req:unkownmatterzertwo
+     on earn:hide this
+
+  *overchargedclick
+    name:Overcharged click
+    desc:"well charged up and ready for aclick that will make sense" increases yield of button click by +12%
+    cost:200 goldendollars
+    req:path2
+    passive:multiply yield of redButton by 12
+    on earn:hide this
+  
+  *overchargedcursor
+     name:Overcharged cursor
+     desc:"well that's lots of charge for that cursor right" increases yield of cursor by +12%
+     cost:300 goldendollars
+     req:path2
+     icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Super_Charged_Mouse.png
+     passive:multiply yield of cursor by 12
+     on earn:hide this
+
+  *overchargedzertwo
+     name:Overcharged zerotwo
+     desc:"welp this is a bad idea" increases yield of zerotwo by +12%
+     cost:400 goldendollars
+     req:overchargedcursor
+     passive:multiply yield of zerotwo by 12
+     on earn:hide this
+
+  *overchargedsnowglobe
+     name:Overcharged snowglobe
+     desc:"are you crazy the snow will melt" increases yield of snowglobe by +12%
+     cost:500 goldendollars
+     req:overchargedzertwo
+     icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Super_Charger_Snowglobe.png
+     passive:multiply yield of snowglobe by 12
+     on earn:hide this
+
+  *overchargedfarms
+     name:Overcharged farms
+     desc:"that's overcharged like to see the farms grow faster than this" increases yield of snowglobe by +12%
+     cost:600 goldendollars
+     req:overchargedsnowglobe
+     icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Super_Charged_Farm.png
+     passive:multiply yield of farms by 12
+     on earn:hide this
+   
+  *overchargedfactories
+     name:Overcharged factory
+     desc:"this factory gots twice as fast" increases yield of factory by +12%
+     cost:700 goldendollars
+     req:overchargedfarms
+     icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Super_Charged_Factory.png
+     passive:multiply yield of factory by 12
+     on earn:hide this
+
+  *overchargedbank
+     name:Overchargedbank
+     desc:"thats a lot of cash" increases yield of bank by +12%
+     cost:800 goldendollars
+     req:overchargedfactories
+     icon:
+     passive:multiply yield of factory by 12
+     on earn:hide this
+
+  *overchargedconsole
+     name:Overcharged console
+     desc:"thats a ton" increases yield of console by +12%
+     cost:900 goldendollars
+     req:overchargedbank
+     icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Super_Charged_Console.png
+     passive:multiply yield of console by 12
+     on earn:hide this
+
+  *overchargedsharaf
+     name:Overcharged sharafzada
+     desc:"WARNING: IDLE GAME OVERLOAD SHARAFZADA TO OVER POWERED" this makes your sharafzada 12 times better
+     cost:1000 goldendollars
+     req:overchargedconsole
+     icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Super_Charged_Shara.png
+     passive:multiply yield of sharafzada by 12
+     on earn:hide this
+//event stuff and upgrades
+  *yourownbuilding
+     name:Your own building 
+     desc:"no one will get this hehe show me proof you bought it"
+     cost:1000000000 goldendollars
+     req:1 goldendollars
+     icon:
+ 
+Achievements
+     *TEMPLATE
+             on click:anim glow
+ 
+   *clickingtime
+      name:Clicking time
+      desc:"time to click right?"
+      req:1 redButton:clicks
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Clicking_Time_Achievement.png
+ 
+   *stillawake
+      name:Still awake?
+      desc:"go to sleep"
+      req:1000 redButton:clicks
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Still_Awake_Achievement.png
+ 
+   *clickityclick
+      name:Clickty click
+      desc:"you own a new cursor now time to click click click right now"
+      req:1 cursor
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Clickity_Clickity_Click_Achievement.png
+ 
+   *stuckin8bits
+      name:Stuck in 8 bits 
+      desc:"you have 50 cursor your in 8 bits"
+      req:50 cursor
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Stuck_in_8_bit_Achievement.png
+ 
+   *strongcursor
+      name:Stong cursor
+      desc:"thats really strong"
+      req:100 cursor
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Strong_Cursor_Achievement.png
+ 
+   *nametheclick
+      name:Name the click
+      desc:"name the click in 10 seconds" 
+      req:200 cursor
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Name_the_Click_Achievement.png
+ 
+   *tripleclik
+      name:Triple clik
+      desc:"triple clik quad clik?"
+      req:300 cursor
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Triple_Click_Achievement.png
+ 
+   *mousewheel
+      name:Mouse wheel
+      desc:"you can install a auto clicker now right?"
+      icon:https://file.garden/Ykhq6WA2LRQTk8jB/Game%20stuff/Mouse_Wheel_Achievement.png
+      req:400 cursor
+ 
+   *touchingmouse
+      name:Touching mouse
+      desc:"so what is this exactly?"
+      req:500 cursor
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Touching_Mouse_Achievement.png
+ 
+   *how
+      name:How?
+      desc:"well how did this get here?"
+      req:1 zerotwo
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/How_Achievement.png
+ 
+   *tomcuhzerotwo
+      name:To much zerotwo
+      desc:"yep this is getting a lot more harder"
+      req:50 zerotwo
+ 
+   *alittletomuchsimps
+      name:A little to much simps
+      desc::"...this is just i dont even know"
+      req:100 zerotwo
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/A_Little_To_Much_Simps_Achievement.png
+ 
+   *missingpeople
+      name:Missing people
+      desc:"did you do this zerotwo?"
+      req:200 zerotwo
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Missing_People_Achievement.png
+ 
+   *takenover
+      name:Taken over
+      desc:"so is this whats happening now"
+      req:300 zerotwo
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Taken_Over_Upgrade.png
+ 
+   *zerotworights
+      name:Zerotwo rights
+      desc:"we all have rights rights?"
+      icon:https://file.garden/Ykhq6WA2LRQTk8jB/Game%20stuff/ZeroTwo_Rights_Achievement.png
+      req:400 zerotwo
+ 
+  *happyzerotwos
+      name:Happy zerotwos
+      desc:"now we are all happy"
+      icon:https://file.garden/Ykhq6WA2LRQTk8jB/Game%20stuff/Happy_ZeroTwos_Achivement.png
+      req:500 zerotwo
+   
+  *helpingzerotwos
+      name:Helping zerotwos
+      desc:"helping them better then getting rid of them right?"
+      icon:https://file.garden/Ykhq6WA2LRQTk8jB/Game%20stuff/Helping_ZeroTwos_Achievement.png
+      req:600 zerotwo
+
+  *plotarmour
+      name:Plot armour
+      desc:"you got plot armour?"
+      icon:https://file.garden/Ykhq6WA2LRQTk8jB/Game%20stuff/Plot_Armour_Achievement.png
+      req:700 zerotwo
+
+  *rennie
+      name:Rennie
+      desc:"snowys mom is here?"
+      icon:https://file.garden/Ykhq6WA2LRQTk8jB/Game%20stuff/Rennie_Achievement.png
+      req:800 zerotwo
+
+  *gapinthemultiverse
+      name:Gap in the multiverse
+      desc:"well they caused it i aint taking a blame"
+      icon:https://file.garden/Ykhq6WA2LRQTk8jB/Game%20stuff/Gap_In_The_Universe_Achievement.png
+      req:900 zerotwo
+
+  *bowtorennie
+      name:Bow to rennie
+      desc:"well i guess were screwed right ha...ha"
+      req:1000 zerotwo
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Bow_To_Rennie_Achievement.png
+ 
+  *snowingintime
+      name:Snowing in time
+      desc:"well its snowing right?"
+      req:1 snowglobe
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Snowing_Time_Achievement.png
+ 
+  *brainfreeze
+      name:Brain freeze
+      desc:"to much cold drinks drank fast huh"
+      req:50 snowglobe
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/Brain_Freeze_Achievement.png
+ 
+  *coldblizzard
+      name:Cold blizzard
+      desc:"brrrr so cold why didnt i bring a jacket"
+      req:100 snowglobe
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Cold_Blizzard_Achievement.png
+ 
+  *morejackets
+      name:More jackets
+      desc:"thanks"
+      req:200 snowglobe
+      icon:https://pipe.miroware.io/61f31a16b1fc4b0dc6b59beb/Game%20stuff/More_Jacket_Achievement.png
+ 
+  *heatedblankets
+      name:Heated blankets
+      desc:"we have the technologey"
+      req:300 snowglobe
+ 
+  *heaters
+      name:Heaters
+      desc:"this feels so warm"
+      req:400 snowglobe
+ 
+  *tomuchblizzards
+      name:To much blizzards
+      desc:"welp i hate this place"
+      req:500 snowglobe
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/To_Much_Blizzard_Achievement.png
+
+  *hotelcold
+      name:Hotel cold
+      desc:"thats cold"
+      req:600 snowglobe
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Snow_Hotel_Achievement.png
+
+  *snowyboy
+      name:Snow boy
+      desc:"thats snowboy"
+      req:700 snowglobe
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Snow_Boy_Achievement.png
+
+  *casadesnowy
+      name:Case de snowy
+      desc:"come on down to casa de snowy for a cold one"
+      req:800 snowglobe
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Casa_De_Snowy_Achievement.png
+
+  *helping
+      name:Helping
+      desc:"sorry for breaking the tos pastebin :sob:"
+      req:900 snowglobe
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Helping_Achievement.png
+
+  *frozendown
+      name:Frozen down
+      desc:"well we are frozen down"
+      req:1000 snowglobe
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Frozen_Down_Achievement.png
+ 
+  *farming22
+      name:Farming 22
+      desc:"its happening all over again"
+      req:1 farm
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Farming_22_Achivement.png
+ 
+  *turninggreen
+      name:Turning green
+      desc:"uh yeah your turning green"
+      req:50 farms
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Turning_Green_Achievement.png
+ 
+  *healthystats
+      name:Healthy stats
+      desc:"looking healthy right?"
+      req:100 farms
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Heatlthy_Charts_Achievement.png
+ 
+  *carrotchaos
+      name:Carrot chaos
+      desc:"this is chaos"
+      req:200 farms
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Carrot_Chaos_Achievement.png
+ 
+  *shovelsup
+      name:Shovels up
+      desc:"shovels up and at the ready"
+      req:300 farms
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Shovels_Up_Achievement.png
+ 
+  *autofarming
+      name:Auto farming
+      desc:"well we have the technology"
+      req:400 farms
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Auto_Farming_Achievement.png
+ 
+  *greenmachine
+      name:Green machine
+      desc:"time to be a green mean eating machine"
+      req:500 farms
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Green_Machine_Achievement.png
+
+  *thefarmerlied
+      name:The farmer lied
+      desc:"milk some how does have bnad effects"
+      req:600 farms
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Farm_Take_Over_Achievement.png
+
+  *rootingseeds
+      name:Rooting seeds
+      desc:"ROOT FOR WHO WILL WIN wait thats the wrong root"
+      req:700 farms
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Rooting_Seeds_Achievement.png
+
+  *farmtakeover
+      name:Farm take over
+      desc:"we need to uproot this problem get it"
+      req:800 farms
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Farm_Take_Over_Achievement.png
+
+  *giagantic
+      name:Gigantic 
+      desc:"well this is supa big"
+      req:900 farms
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Gigantic_Achievement.png
+
+  *crackingcrops
+      name:Cracking crops
+      desc:"this works right?"
+      req:1000 farms
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Ctacking_Crops_Achievement.png
+
+  *production
+      name:Production
+      desc:"well we are doing production right?"
+      req:1 factory
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Production_Achievement.png
+ 
+  *goinggreen
+      name:Going green
+      desc:"looks like we are going green"
+      req:50 factory
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Going_Green_Achievement.png
+ 
+  *productionline
+      name:Prouduction line
+      desc:"cookie batter here metal stuff here n boom"
+      req:100 factory
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Production_Line_Achievement.png
+ 
+  *coffeerush
+      name:Coffee rush
+      desc:"morning rush right?"
+      req:200 factory
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Super_Steam_Stacks_Achievement.png
+ 
+  *supersteamstacks
+      name:Super steam stacks
+      desc:"welp that's really big"
+      req:300 factory
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Super_Steam_Stacks_Achievement.png
+ 
+  *greenpower
+      name:Green power
+      desc:"why that's more green then ever"
+      req:400 factory
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Green_Power_Achievement.png
+ 
+  *poullution
+      name:Poullution
+      desc:"i told you dont throw the garbage in the ocean"
+      req:500 factory 
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Pollution_Achievement.png
+
+  *tryyourbest
+      name:Try your best
+      desc:"ok do your best"
+      req:600 factory
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Try_Your_Best_Achievement.png
+
+  *realgrenn
+      name:Real grenn 
+      desc:"let me tell you your getting to greedy so stop"
+      req:700 factory
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff
+
+  *ads
+      name:Ads
+      desc:"yep ads"
+      req:800 factory
+     icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff
+
+  *kingevan
+      name:King evan
+      desc:"just a king named evan"
+      req:900 factory
+
+  *tomuchsmoke
+      name:To much smoke
+      desc:"to much smoke in the sky?"
+      req:1000 factory
+
+  *bankingonbanks
+      name:Banking on banks
+      desc:"money"
+      icon:https://file.garden/Ykhq6WA2LRQTk8jB/Game%20stuff/Banking_on_Banks_Achievement.png
+      req:1 banks
+
+  *loaningout
+      name:Loaning out
+      desc:"so much money lost so much gained"
+      icon:https://file.garden/Ykhq6WA2LRQTk8jB/Game%20stuff/Loaning_Out_Achievement.png
+      req:50 banks
+
+  *intrested
+      name:Intrested intresters
+      desc:"hmmm intresting"
+      icon:https://file.garden/Ykhq6WA2LRQTk8jB/Game%20stuff/Intreested_Intresters_Achievement.png
+      req:100 banks
+
+  *lazarvault
+      name:Lazar vault
+      desc:"wow"
+      icon:https://file.garden/Ykhq6WA2LRQTk8jB/Game%20stuff/Lazer_Vault_Achievement.png
+      req:200 banks
+
+  *cramingspace
+      name:Craming space
+      desc:"getting cramped"
+      icon:https://file.garden/Ykhq6WA2LRQTk8jB/Game%20stuff/Craming_Space_Achievement.png
+      req:300 banks
+
+  *infintemoney
+      name:Infinte money
+      desc:"nothing can stop us"
+      req:400 banks
+
+  *workingtime
+      name:Working time
+      desc:"work on my slaves i mean workers"
+      req:500 banks
+
+  *reallyworking
+      name:Really working
+      desc:"yeah really working"
+      req:600 banks
+
+  *jam
+      name:Jam
+      desc:"mmph lets get this jam no but seriously this jams good"
+      req:700 banks
+
+  *bigloans
+      name:Big loans
+      desc:"thats really big"
+      req:800 banks
+
+  *moretime
+      name:More time
+      desc:"lots of time"
+      req:900 banks
+
+  *bankingshrine
+      name:Banking shrine
+      desc:"beautiful"
+      req:1000 banks
+
+  *onclickhack
+      name:On_click:hack
+      desc:"well thats a lot"
+      req:1 console
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/On_Click_Hack_Achievement.png
+ 
+  *crakingconsole
+      name:Cracking consoel
+      desc:"thought it would be fingers"
+      req:50 console
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Cracking_Console_Achievement.png
+ 
+  *hackingtomuch
+      name:Hacking2much
+      desc:"2 much right?"
+      req:100 console
+ 
+  *saicosnole3times
+      name:Sai console 3 times
+      desc:"did you sai it"
+      req:200 console
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Sai_Console_3_Times_Achievement.png
+ 
+  *cheatedstuffbad
+      name:Cheated stuff bad
+      desc:"they are bad right even like candy"
+      req:300 console
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Cheated_Stuff_Bad_Achievment.png
+ 
+  *copynpaste
+      name:Copy n paste
+      desc:"wait you were doing this?"
+      req:400 console
+ 
+   *terrible 
+      name:Terrible
+      desc:"this is just terrible never hack again"
+      req:500 console
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Terrible_Achievement.png
+
+   *tomcuhcofe
+      name:To much cofe
+      desc:"to much cofe right?"
+      req:600 console
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/To_Much_Coffee_Achievement.png
+
+   *rankingup
+      name:Raking up 
+      desc:"ranking up console"
+      req:700 console
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Ranked_Up_Consoles_Achievement.png
+
+   *sleepnight
+      name:Sleep night
+      desc:"sleep night :D"
+      req:800 console
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Sleep_Night_Achievement.png
+
+   *tired
+      name:Tired
+      desc:"we all get it thats why game lore is here ps game takes place in 2022"
+      req:900 console
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Tired_Achievement.png
+
+   *achivments101
+      name:Achivments 101
+      desc:"takes time and consoles"
+      req:1000 console
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Achievement_101_Achievement.png
+ 
+   *lookinginamirror
+      name:Looking in a mirror
+      desc:"looking in mirror right wait thats me how?"
+      req:1 sharafzada
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Looking_In_A_Mirror_Achievment.png
+ 
+   *thatsmeright
+      name:Thats me right?
+      desc:"hows that me when theres more of me?"
+      req:50 sharafzada
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Thats_Me_Right_Achievement.png
+ 
+   *ownership
+      name:Ownership
+      desc:"since you forced me fine"
+      req:100 sharafzada
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Ownership_Achievement.png
+ 
+   *powerup
+      name:Power up
+      desc:"POWERRRRRR UP"
+      req:200 sharafzada
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Power_Up_Achievement.png
+ 
+   *tomuchsharafzada
+      name:To much sharafzada
+      desc:"to much eh"
+      req:300 sharafzada
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/To_Much_Sharafzada_Achievement.png
+ 
+   *runningit
+      name:Running it
+      desc:"running code?"
+      req:400 sharafzada
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Running_It_Achievement.png
+ 
+   *givehimcoffee
+      name:Give him coffee
+      desc:"do it now"
+      req:500 sharafzada
+
+   *bringinsteam
+      name:Bring in steam
+      desc:"bring it in" 
+      req:600 sharafzada
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Bring_It_In_Steam_Achievement.png
+
+   *clickersha
+      name:Clicker sha
+      desc:"your clicking click clicking"
+      req:700 sharafzada
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Clicker_Sha_Achievement.png
+
+   *somuchshanotime
+      name:So much sha no time
+      desc:"to much of him no time to spend with him"
+      req:800 sharafzada
+      icon:
+
+   *runtheclock
+      name:Run the clock
+      desc:"run it"
+      req:900 sharafzada
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Run_The_Clock_Achievement.png
+
+   *chaos
+      name:Chaos
+      desc:"chaos"
+      req:1000 sharafzada
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Chaos_Achievement.png
+
+   *goldenplace
+      name:Golden house
+      desc:"now who would make this?"
+      req:1 goldenhouse
+      icon:
+
+   *goldenshop
+      name:Golden shop
+      desc:"golden right"
+      req:50 goldenhouse
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Gold_Shop_Achievement.png
+ 
+   *easteregg
+      name:Easter egg
+      desc:"ëaster eg"
+      req:strongerfinger
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Easter_Egg_Achievement.png
+ 
+   *tomuch
+      name:To much!
+      desc:"to much right?"
+      req:100 sharafzada, 100 console, 100 factory, 100 farm, 100 snowglobe, 100 cursor, 100 zerotwo
+
+   *hereyougoeaster
+      name:Here you go easter
+      desc:"another easter egg with a code"
+      req:100 sharafzada, 50 console, 15 factory, 20 farm, 19 snowglobe, 20 cursor, 17 zerotwo
+
+   *million
+      name:Million
+      desc:"you have MILLIONS"
+      req:1000000 dollars:earned
+
+   *billions
+      name:Billions
+      desc:"BUY IT ALLL"
+      req:1000000000 dollars:earned
+
+   *trillion
+      name:Trillions
+      desc:"that's a lot"
+      req:1000000000000 dollars:earned
+
+   *quadrillion
+      name:Quadrillion
+      desc:"buy it allllll"
+      req:1000000000000000 dollars:earned
+
+   *goldentouch
+      name:Golden touch
+      desc:"I got the golden touch"
+      req:1 goldendollars
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Golden_Touch_Achievement.png
+
+   *takenoutloan
+      name:Taken out loan
+      desc:"take out a loan for 1000 golden dollars next"
+      req:100 goldendollars
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Taken_Out_Loan_Achievement.png
+
+    *crystalclear
+      name:Crystal clear
+      desc:"your decisions matter..."
+      req:path1, path2
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Crystal_Clear_Achievement.png
+
+    *overchargednready
+      name:Overcharged n ready
+      desc:"I'm cyberpunked get it"
+      req:overchargedcursor
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Overcharged_Ready_Achievement.png
+
+    *rayyansupermode
+      name:Rayyan supper mode
+      desc:"looks like someone owns this house huh"
+      req:100 goldenhouses
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Rayyan_Super_Mode_Achievement.png
+
+    *unstable
+      name:Unstable
+      desc:"welp unstable"
+      req:overchargedsharaf
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Unstable_Achievement.png
+
+    *goldenpound
+      name:Golden pound
+      desc:"weight is 1 pound"
+      req:1000 goldendollars
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Golden_Pound_Achievement.png
+
+    *goldenton
+       name:Golden ton
+       desc:"weight is 1 ton"
+       req:10000 goldendollars
+       icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Golden_Ton_Achievement.png
+ 
+   *littlespace
+      name:Little space
+      desc:"to much to little space"
+      req:1000 sharafzada, 1000 console, 1000 factory, 1000 farm, 1000 snowglobe, 1000 cursor, 1000 zerotwo
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Littles_Space_Achievement.png
+
+    *transcript
+      name:Transcriptno.1
+      desc:"transcript no.1: we got enemies coming from every cant stop them from coming into the game its a dimensional take over dress well or die *end of transcript*"
+      req:100 zerotwos
+      icon:
+ 
+    *valentiens
+      name:Valentines
+      desc:"something here for the season of love"
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Valentines_Achievement.png
+
+    *valentienslove
+      name:Valentines love
+      desc:"to much love eh"
+      icon:https://file.garden/YfMaFrH8Sw3GtZvr/Game%20stuff/Valentine_Love_Achievement.png
